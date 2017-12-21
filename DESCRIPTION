@@ -7,4 +7,5 @@ Maintainer: Benjamin A Logsodn <ben.logsdon@sagebase.org>
 Description: Two dimensional grid search over lambda and number of modules to identify best parameters for INSPIRE.
 License: GPL-2
 Encoding: UTF-8
+Requires: INSPIRE
 LazyData: true
