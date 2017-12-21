@@ -1,4 +1,4 @@
-mcnt = 90
+mcnt = 10
 lambda = .1
 data('two_example_datasets')
 X <- list(x1 = scale(log(exmp_dataset1)),
@@ -11,4 +11,4 @@ modComplex <- INSPIREoptimizer::extractModelComplexityParameters(X,res$L,res$Z,r
 
 bicTest <- INSPIREoptimizer::INSPIREbic(X,res$L,res$Z,res$theta,lambda)
 
-
+optimizedINSPIRE <- INSPIREoptimizer::INSPIREgridSearch(X)
