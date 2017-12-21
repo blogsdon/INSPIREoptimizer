@@ -8,10 +8,10 @@ INSPIRELogLikelihood <- function(X,L,Z,theta,lambda){
   SL <- (1/nT)*(t(L)%*%L)
   loglik <- (nT/2)*(sum(bar) - sum(diag(SL%*%theta)))
   loglik <- loglik - lambda*(sum(abs(theta))+sum(abs(diag(theta))))
-  Lq <- INSPIRE::buildPseudoData(X,L,Z)
-  err <- Reduce('-',X,Lq)
+  Lq <- INSPIREoptimizer::buildPseudoData(X,L,Z)
+  err <- mapply('-',X,Lq,SIMPLIFY=F)
   err <- sapply(err,function(x) sum(c(x)^2))
   err <- -0.5*sum(err)
-  loglik <- logLik + err
+  loglik <- loglik + err
   return(loglik)
 }
